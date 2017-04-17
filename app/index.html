@@ -13,8 +13,15 @@ Specify an AngularJS module to load using ng-app="phonecatApp", where phonecatAp
   <script type="app.js"></script>
 </head>
 
-<body ng-controller="PhoneListcontroller">
+<!-- Attach PhoneListController to the body tag. This controller is in charge of the DOM sub-tree -->
+<body ng-controller="PhoneListController">
   <ul>
+    <!-- AngularJS repeater directive, this tells AngularJS to create a <li> element for each phone in the list -->
+    <li ng-repeat="phone in phones">
+      <!-- Expressions wrapped in curly braces will be replaced by the values of the expressions -->
+      <span>{{phone.name}}</span>
+      <p>{{phone.snippet}}</p>
+    </li>
   </ul>
 </body>
 
