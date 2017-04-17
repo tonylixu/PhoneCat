@@ -13,26 +13,9 @@ Specify an AngularJS module to load using ng-app="phonecatApp", where phonecatAp
   <script type="app.js"></script>
 </head>
 
-<body>
-  <!-- AngularJS should eveluate the ('yet' + '!') expression -->
-  <p>Nothing here {{'yet' + '!'}}</p>
-  <!-- Experiment -->
-  <p>1 + 2 = {{1 + 2}}</p>
+<body ng-controller="PhoneListcontroller">
   <ul>
-    <li>
-      <span>Nexus S</span>
-      <p>
-        Fast just got faster with Nexus S.
-      </p>
-    </li>
-    <li>
-      <span>Motorola XOOM with Wi-Fi</span>
-      <p>
-        The Next, Next Generation tablet.
-      </p>
-    </li>
-    </ul>
-    <p>Total number of phones: 2</p>
+  </ul>
 </body>
 
 </html>
