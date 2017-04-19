@@ -11,5 +11,8 @@ describe('PhoneListController', function() {
 
     // Verify that the phones array property on the scope contains three records
     expect(scope.phones.length).toBe(3);
+
+    // Verify scope.name
+    expect(scope.name).toBe('world');
   }));
 })
