@@ -20,6 +20,7 @@ Specify an AngularJS module to load using ng-app="phonecatApp", where phonecatAp
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <script src="bower_components/angular/angular.js"></script>
   <script src="app.js"></script>
+  <script src="phone-list.component.js"></script>
 </head>
 
 <!-- Attach PhoneListController to the body tag. This controller is in charge of the DOM sub-tree -->
@@ -54,6 +55,8 @@ Specify an AngularJS module to load using ng-app="phonecatApp", where phonecatAp
     </tr>
   </table>
 
-</body>
+  <!-- Use a custom component to render a list of phones -->
+<phone-list></phone-list>
 
+</body>
 </html>
