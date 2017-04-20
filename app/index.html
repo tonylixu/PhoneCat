@@ -20,40 +20,13 @@ Specify an AngularJS module to load using ng-app="phonecatApp", where phonecatAp
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <script src="bower_components/angular/angular.js"></script>
   <script src="app.js"></script>
+  <script src="phone-list.component.js"></script>
 </head>
 
-<!-- Attach PhoneListController to the body tag. This controller is in charge of the DOM sub-tree -->
-<body ng-controller="PhoneListController">
-  <ul>
-    <!-- AngularJS repeater directive, this tells AngularJS to create a <li> element for each phone in the list -->
-    <li ng-repeat="phone in phones">
-      <!-- Expressions wrapped in curly braces will be replaced by the values of the expressions -->
-      <span>{{phone.name}}</span>
-      <p>{{phone.snippet}}</p>
-    </li>
-  </ul>
+<body>
 
-  <p>Total number of phones: {{phones.length}}</p>
-  <p>Hello, {{name}}!</p>
-
-  <table>
-    <tr>
-      <th>Row number</th>
-    </tr>
-    <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]">
-      <td>{{i}}</td>
-    </tr>
-  </table>
-
-  <table>
-    <tr>
-      <th>Row number</th>
-    </tr>
-    <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]">
-      <td>{{i+1}}</td>
-    </tr>
-  </table>
+  <!-- Use a custom component to render a list of phones -->
+  <phone-list></phone-list>
 
 </body>
-
 </html>
