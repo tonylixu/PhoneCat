@@ -1,6 +1,7 @@
 angular.
   module('phonecatApp').
   component('phoneList', {
+    // Notice that we use $ctrl to avoid using scope directly, $ctrl is an alias of the controller
     template:
       '<ul>' +
         '<li ng-repeat="phone in $ctrl.phones">' +
