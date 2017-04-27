@@ -1,6 +1,26 @@
-<ul>
-  <li ng-repeat="phone in $ctrl.phones">
-    <span>{{phone.name}}</span>
-    <p>{{phone.snippet}}</p>
-  </li>
-</ul>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!-- Sidebar content-->
+      <!-- When page loads, AngularJS binds the value of the input box to the data 
+           model variable specified with ngModel and keeps the two in sync.
+           The data that a user types into the input box (bound to $ctrl.query) is 
+           immediately available as a filter input in the list repeater -->
+      Search: <input ng-model="$ctrl.query" />
+    </div>
+
+    <div class="col-md-10">
+      <!--Body Content-->
+
+      <ul>
+        <!-- Use AngularJS's filter function to process the input for ngRepeat directive, the 
+             filter function uses the $ctrl.query value to create a new array that contains
+             only those records that match the query. -->
+        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query">
+          <span>{{phone.name}}</span>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
