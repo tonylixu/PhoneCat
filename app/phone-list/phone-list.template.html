@@ -1,12 +1,29 @@
 <div class="container-fluid">
   <div class="row">
+    <!-- All divs are divided into 12 columns 
+         col-*-6 spans 6 of 12 columns
+         xs = extra small screens (mobile phones)
+         sm = small screens (tablets)
+         md = medium screens (some desktops)
+         lg = large screens (remaining desktops) -->
     <div class="col-md-2">
       <!-- Sidebar content-->
       <!-- When page loads, AngularJS binds the value of the input box to the data 
            model variable specified with ngModel and keeps the two in sync.
            The data that a user types into the input box (bound to $ctrl.query) is 
            immediately available as a filter input in the list repeater -->
-      Search: <input ng-model="$ctrl.query" />
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" />
+      </p>
+
+      <p>
+        Sort by:
+          <select ng-model="$ctrl.orderProp">
+            <option value="name">Alphabetical</option>
+            <option value="age">Newest</option>
+          </select>
+      </p>
     </div>
 
     <div class="col-md-10">
@@ -16,7 +33,7 @@
         <!-- Use AngularJS's filter function to process the input for ngRepeat directive, the 
              filter function uses the $ctrl.query value to create a new array that contains
              only those records that match the query. -->
-        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query">
+        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp">
           <span>{{phone.name}}</span>
           <p>{{phone.snippet}}</p>
         </li>
