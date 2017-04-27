@@ -12,7 +12,18 @@
            model variable specified with ngModel and keeps the two in sync.
            The data that a user types into the input box (bound to $ctrl.query) is 
            immediately available as a filter input in the list repeater -->
-      Search: <input ng-model="$ctrl.query" />
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" />
+      </p>
+
+      <p>
+        Sort by:
+          <select ng-model="$ctrl.orderProp">
+            <option value="name">Alphabetical</option>
+            <option value="age">Newest</option>
+          </select>
+      </p>
     </div>
 
     <div class="col-md-10">
@@ -22,7 +33,7 @@
         <!-- Use AngularJS's filter function to process the input for ngRepeat directive, the 
              filter function uses the $ctrl.query value to create a new array that contains
              only those records that match the query. -->
-        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query">
+        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp">
           <span>{{phone.name}}</span>
           <p>{{phone.snippet}}</p>
         </li>
