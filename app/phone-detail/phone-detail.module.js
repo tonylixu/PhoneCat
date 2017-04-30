@@ -1,6 +1,6 @@
 'use strict';
 
-// Define the `phoneList` module
+// Define the `phoneDetail` module
 angular.module('phoneDetail', [
   'ngRoute'
 ]);

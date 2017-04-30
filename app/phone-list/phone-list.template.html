@@ -29,17 +29,17 @@
     <div class="col-md-10">
       <!--Body Content-->
 
-      <ul>
+      <ul class="phones">
         <!-- Use AngularJS's filter function to process the input for ngRepeat directive, the 
              filter function uses the $ctrl.query value to create a new array that contains
              only those records that match the query. -->
         <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
-          <a href ="#/phones/{{phone.id}}" class="thumb">
+          <a href ="#!/phones/{{phone.id}}" class="thumb">
             <!-- Nitice that we use ng-src instead of normal src, to prevents the browser from treating AngularJS
             {{ expression}} markup literally  -->
             <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
           </a>
-          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+          <a href="#!/phones/{{phone.id}}">{{phone.name}}</a>
           <p>{{phone.snippet}}</p>
         </li>
       </ul>

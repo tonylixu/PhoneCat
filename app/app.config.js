@@ -21,7 +21,7 @@ angular.
           template: '<phone-list></phone-list>'
         }).
         when('/phones/:phoneId', {
-          templeate: '{{$ctrl.phoneId}} <phone-detail></phone-detail>'
+          template: '{{$ctrl.phoneId}} <phone-detail></phone-detail>'
         }).
         otherwise('/phones');
     }
