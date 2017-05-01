@@ -33,7 +33,8 @@
         <!-- Use AngularJS's filter function to process the input for ngRepeat directive, the 
              filter function uses the $ctrl.query value to create a new array that contains
              only those records that match the query. -->
-        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
+        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp" 
+            class="thumbnail phone-list-item">
           <a href ="#!/phones/{{phone.id}}" class="thumb">
             <!-- Nitice that we use ng-src instead of normal src, to prevents the browser from treating AngularJS
             {{ expression}} markup literally  -->
