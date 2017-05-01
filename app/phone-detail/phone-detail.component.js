@@ -8,8 +8,15 @@ angular.
       function PhoneDetailController($http, $routeParams) {
         var self = this;
 
+        // Add mainImageUrl model property
+        self.setImage = function setImage(imageUrl) {
+          self.mainImageUrl = imageUrl;
+        };
+
         $http.get('phones/' + $routeParams.phoneId + '.json').then(function(response) {
           self.phone = response.data;
+          // Set mainImageUrl property default value to the first phone image
+          self.setImage(self.phone.images[0]);
         });
       }
     ]
